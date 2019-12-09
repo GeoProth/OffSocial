@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FBLogin Renders 1`] = `
+<div class="fb-login">
+  <div class="user-alert">
+    <h1>Ready to get your life back?</h1>
+    <p>Sometimes facebook will delete your cookies on accident</p>
+    <p>Don't worry, this will only take a sec.</p>
+  </div>
+  <vfacebooklogin-stub value="[object Object]" appid="" version="v3.1" options="[object Object]" loginoptions="[object Object]" buttonstyle="[object Object]" loaderstyle="[object Object]" tokenstyle="[object Object]" textstyle="[object Object]" transition="" scope="name, email, id, picture, user_events, user_photos" class="login-button"></vfacebooklogin-stub>
+</div>
+`;

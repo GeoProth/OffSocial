@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI Button the component can render 1`] = `
+<button class="ui-button">
+
+</button>
+`;

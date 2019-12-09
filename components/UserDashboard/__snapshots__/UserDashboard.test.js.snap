@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDashboard Renders 1`] = `
+<div>
+  <div class="welcome">
+    <h2>
+      Welcome Test!
+    </h2>
+  </div>
+  <div class="grid-layout"></div>
+</div>
+`;

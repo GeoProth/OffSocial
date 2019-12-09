@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album Card can render 1`] = `
+<div class="albums-card">
+  <div class="image" style="background-image: url(undefined);"></div>
+  <div class="info">
+    <p></p>
+  </div>
+  <div class="button-container">
+    <downloadbutton-stub text="Download Cover" class="download-cover"></downloadbutton-stub>
+    <downloadbutton-stub text="Download All undefined Photos" class="download-all"></downloadbutton-stub>
+  </div>
+</div>
+`;

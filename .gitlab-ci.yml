@@ -1,0 +1,56 @@
+image: rhinogram/node-awscli
+stages:
+  - test
+  - make_bucket
+  - deploy
+
+variables:
+  AWS_DEFAULT_REGION: us-west-2
+  BUCKET_NAME: gp.us
+  DISTRUBUTION_ID: IDGOESHERE
+
+test:
+  stage: test
+  before_script:
+    - npm i
+  script:
+    - npm test
+
+make_bucket:
+  stage: make_bucket
+  script:
+    - "aws s3 mb s3://gp.us-${CI_COMMIT_REF_NAME} || exit 0"
+  except:
+    refs:
+      - master
+
+deploy:
+  stage: deploy
+  script:
+    - npm i
+    - npm run build
+    - aws s3 sync dist/ s3://gp.us-${CI_COMMIT_REF_NAME}
+    - aws s3 website s3://gp.us-${CI_COMMIT_REF_NAME} --index-document index.html
+    - aws s3api put-bucket-policy --bucket gp.us-${CI_COMMIT_REF_NAME} --policy "{\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::gp.us-${CI_COMMIT_REF_NAME}/*\"}]}"
+    - echo "Website published to http://gp.us-${CI_COMMIT_REF_NAME}.s3-website-${AWS_DEFAULT_REGION}.amazonaws.com"
+  except:
+    refs:
+      - master
+
+clean_bucket:
+  stage: deploy
+  script:
+    - aws s3 rm s3://gp.us-${CI_COMMIT_REF_NAME} --recursive
+    - aws s3api delete-bucket --bucket gp.us-${CI_COMMIT_REF_NAME}
+  when: manual
+
+deploy_to_production:
+  stage: deploy
+  only:
+    refs:
+      - master
+  script:
+    - npm i
+    - npm run build
+    - aws s3 sync --acl public-read dist/ s3://gp.us
+    - aws cloudfront create-invalidation --distribution-id ${DISTRUBUTION_ID} --paths '/*'

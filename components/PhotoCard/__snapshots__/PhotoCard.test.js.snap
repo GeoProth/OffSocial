@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhotoCard Renders 1`] = `
+<div class="photo-card">
+  <div class="img" style="background-image: url(undefined);"></div>
+  <downloadbutton-stub text="Download"></downloadbutton-stub>
+</div>
+`;

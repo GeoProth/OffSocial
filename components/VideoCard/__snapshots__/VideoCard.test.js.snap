@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoCard renders 1`] = `
+<div class="video-card"><video controls="controls" type="video/mp4" class="video">
+    <source></video>
+  <h3></h3>
+  <downloadbutton-stub text="Download"></downloadbutton-stub>
+</div>
+`;

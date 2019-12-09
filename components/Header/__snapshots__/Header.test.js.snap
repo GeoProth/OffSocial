@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Should render 1`] = `
+<div class="main-header">
+  <!---->
+  <div class="branding">
+    <h3>Delete My Digital Life</h3>
+  </div>
+  <!---->
+</div>
+`;

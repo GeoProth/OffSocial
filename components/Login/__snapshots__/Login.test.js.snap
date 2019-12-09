@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders 1`] = `
+<div class="login-form">
+  <h1>Login</h1>
+  <!----> <input placeholder="username" class="ui-input username-input">
+  <p></p> <input type="password" placeholder="password" class="ui-input">
+  <nuxt-link-stub to="/new-user" class="new-user-link">
+    <p>Don't have an account?</p>
+  </nuxt-link-stub>
+  <nuxt-link-stub to="/reset-password" class="reset-password-link">
+    <p>Forgot your password?</p>
+  </nuxt-link-stub> <button text="Submit" class="login-form-submit">
+    Submit
+  </button>
+</div>
+`;

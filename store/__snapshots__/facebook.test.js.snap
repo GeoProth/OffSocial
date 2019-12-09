@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Facebook store Mutations SET_ALBUMS adds the albums array to the state 1`] = `
+Object {
+  "albums": Object {
+    "data": Array [
+      Object {
+        "fizz": "buzz",
+      },
+    ],
+  },
+}
+`;

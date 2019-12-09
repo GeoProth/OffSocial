@@ -1,0 +1,86 @@
+{
+  "name": "CS3750_Group4_Project",
+  "version": "1.0.0",
+  "description": "Some cool project",
+  "author": "Geoff Prothero",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "stylelint": "stylus-supremacy format **/*.styl --options .stylelintrc --replace",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update": "jest -u",
+    "deploy": "aws s3 sync ./dist s3://jrasm.us/"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/style-resources": "^0.1.2",
+    "cross-env": "^5.2.0",
+    "crypto-js": "^3.1.9-1",
+    "downloadjs": "^1.4.7",
+    "font-awesome": "^4.7.0",
+    "joi-browser": "^13.4.0",
+    "jshint": "^2.10.1",
+    "jszip": "^3.2.1",
+    "lodash": "^4.17.11",
+    "nuxt": "^2.6.2",
+    "nuxt-stylus-resources-loader": "^2.0.0",
+    "sanitize.css": "^8.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-awesome": "^3.3.1",
+    "vue-facebook-login-component": "^1.3.5",
+    "vue-js-popover": "^1.1.8",
+    "vue2-animate": "^2.1.0",
+    "vuex-persist": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@nuxtjs/eslint-config": "^0.0.1",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": ">=12.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": ">=2.14.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "eslint-plugin-node": ">=7.0.1",
+    "eslint-plugin-promise": ">=4.0.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "flush-promises": "^1.0.2",
+    "fs-readdir-recursive": "^1.1.0",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "jest-extended": "^0.11.1",
+    "jest-localstorage-mock": "^2.4.0",
+    "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.9",
+    "stylus-supremacy": "^2.12.7",
+    "vue-jest": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.styl": [
+      "stylus-supremacy format --options .stylelintrc --replace",
+      "git add"
+    ]
+  }
+}
