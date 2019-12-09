@@ -1,3 +1,7 @@
+This is a team JavaScript project in the Vue.js framework and utilizing CI/CD.
+This program lets a user log in to their social media accounts and lets them
+download their data for safe keeping.
+
 # CS3750 Group 4
 
 > My awesome Nuxt.js project
