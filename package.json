@@ -28,7 +28,7 @@
     "jshint": "^2.10.1",
     "jszip": "^3.2.1",
     "lodash": "^4.17.11",
-    "nuxt": "^2.6.2",
+    "nuxt": "^3.4.3",
     "nuxt-stylus-resources-loader": "^2.0.0",
     "sanitize.css": "^8.0.0",
     "stylus": "^0.54.5",
